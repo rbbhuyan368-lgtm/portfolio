@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ritu Bhuiyan - AI Web Developer, Prompt Engineer &amp; UI/UX Designer | Green University of Bangladesh</title>
+    <meta name="description" content="Ritu Bhuiyan is an AI-driven Web Developer, Prompt Engineer, and CSE student at Green University of Bangladesh. Specializing in Google Antigravity, Claude AI, OpenAI Codex, WordPress, and Figma UI/UX design.">
+    <meta name="keywords" content="Ritu Bhuiyan, RB Bhuiyan, AI Web Developer, Prompt Engineering, Google Antigravity, Claude AI, OpenAI Codex, WordPress, Figma UI/UX, Green University of Bangladesh, CSE Student">
+    <meta name="author" content="Ritu Bhuiyan">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="assets/css/style.css?v=5.5">
+</head>
+<body class="home1-page">
+
+    <!-- 1. Background Video Layer (Earth Lines Sphere 3D Video) -->
+    <video class="body-overlay" autoplay loop muted playsinline poster="assets/images/portfolio1.jpg">
+        <source src="assets/video1.mp4" type="video/mp4">
+    </video>
+
+    <!-- 2. Interactive 3D Sphere Wireframe Particle Canvas -->
+    <canvas id="sphereCanvas"></canvas>
+
+    <!-- 3. Dark Vignette Tint Layer -->
+    <div class="bg-vignette"></div>
+
+    <!-- 4. Page Preloader -->
+    <div class="page-loader">
+        <div class="bounceball"></div>
+        <span>Ritu Bhuiyan &bull; AI Web Developer</span>
+    </div>
+
+    <!-- 5. Mobile Frame Top Bar (Sticky on Mobile, Hidden on Desktop) -->
+    <header class="mobile-header-bar">
+        <a href="#home" class="brand-logo" aria-label="Ritu Bhuiyan">
+            <img src="assets/images/ritu-bw.jpg" alt="Ritu Bhuiyan" class="logo-avatar">
+            <span class="active-page-name" id="activePageName">Home</span>
+        </a>
+        <div class="mobile-header-actions">
+            <a href="https://wa.me/8801703506909" target="_blank" rel="noopener" class="whatsapp-btn" title="WhatsApp Chat" aria-label="WhatsApp">
+                <i class="lab la-whatsapp"></i>
+            </a>
+            <a href="#contact" class="mobile-contact-pill">Hire Me</a>
+            <button type="button" class="icon-menu" id="mobileMenuToggle" onclick="window.toggleNavDrawer(event)" title="Toggle Navigation" aria-label="Toggle Navigation">
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- 6. Desktop Floating Icon Menu Toggle -->
+    <button type="button" class="icon-menu desktop-menu-toggle" id="desktopMenuToggle" onclick="window.toggleNavDrawer(event)" title="Toggle Navigation" aria-label="Toggle Navigation">
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </button>
+
+
+    <!-- 8. Responsive Mobile Drawer Navigation Menu -->
+    <div class="responsive-sidebar-menu" id="responsiveSidebarMenu">
+        <div class="overlay" onclick="window.closeNavDrawer(event)"></div>
+        <div class="sidebar-menu-inner">
+            <button type="button" class="close-settings" id="closeMenuBtn" onclick="window.closeNavDrawer(event)" title="Close Menu" aria-label="Close Menu">
+                <i class="las la-times"></i>
+            </button>
+            <div class="menu-wrap">
+                <p>Navigation</p>
+                <ul class="dmenu">
+                    <li><a class="scroll-to" onclick="window.closeNavDrawer(event)" href="#home"><i class="las la-home"></i> <span>Home</span></a></li>
+                    <li><a class="scroll-to" onclick="window.closeNavDrawer(event)" href="#about"><i class="lar la-user"></i> <span>About</span></a></li>
+                    <li><a class="scroll-to" onclick="window.closeNavDrawer(event)" href="#resume"><i class="las la-briefcase"></i> <span>Resume</span></a></li>
+                    <li><a class="scroll-to" onclick="window.closeNavDrawer(event)" href="#services"><i class="las la-stream"></i> <span>Services</span></a></li>
+                    <li><a class="scroll-to" onclick="window.closeNavDrawer(event)" href="#skills"><i class="las la-shapes"></i> <span>Skills</span></a></li>
+                    <li><a class="scroll-to" onclick="window.closeNavDrawer(event)" href="#portfolio"><i class="las la-grip-vertical"></i> <span>Portfolio</span></a></li>
+                    <li><a class="scroll-to" onclick="window.closeNavDrawer(event)" href="#testimonial"><i class="lar la-comment"></i> <span>Testimonials</span></a></li>
+                    <li><a class="scroll-to" onclick="window.closeNavDrawer(event)" href="#pricing"><i class="las la-dollar-sign"></i> <span>Pricing</span></a></li>
+                    <li><a class="scroll-to" onclick="window.closeNavDrawer(event)" href="#contact"><i class="las la-envelope"></i> <span>Contact</span></a></li>
+                </ul>
+            </div>
+            <div class="sidebar-social">
+                <p>Connect</p>
+                <div class="social-links">
+                    <a href="https://github.com" target="_blank" rel="noopener" aria-label="GitHub"><i class="lab la-github"></i></a>
+                    <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="lab la-linkedin-in"></i></a>
+                    <a href="https://twitter.com" target="_blank" rel="noopener" aria-label="Twitter"><i class="lab la-twitter"></i></a>
+                    <a href="https://wa.me/8801703506909" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="lab la-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 9. Desktop Right Fixed Circular Nav Menu -->
+    <ul class="dmenu">
+        <li><a class="scroll-to active" href="#home"><i class="las la-home"></i> <span>Home</span></a></li>
+        <li><a class="scroll-to" href="#about"><i class="lar la-user"></i> <span>About</span></a></li>
+        <li><a class="scroll-to" href="#resume"><i class="las la-briefcase"></i> <span>Resume</span></a></li>
+        <li><a class="scroll-to" href="#services"><i class="las la-stream"></i> <span>Services</span></a></li>
+        <li><a class="scroll-to" href="#skills"><i class="las la-shapes"></i> <span>Skills</span></a></li>
+        <li><a class="scroll-to" href="#portfolio"><i class="las la-grip-vertical"></i> <span>Portfolio</span></a></li>
+        <li><a class="scroll-to" href="#testimonial"><i class="lar la-comment"></i> <span>Testimonials</span></a></li>
+        <li><a class="scroll-to" href="#pricing"><i class="las la-dollar-sign"></i> <span>Pricing</span></a></li>
+        <li><a class="scroll-to" href="#contact"><i class="las la-envelope"></i> <span>Contact</span></a></li>
+    </ul>
+
+    <!-- 10. Left Fixed Profile Sidebar Card (Desktop) -->
+    <aside class="left-sidebar">
+        <div class="sidebar-header">
+            <a href="#home" class="brand-logo">
+                <img src="assets/images/ritu-bw.jpg" alt="Ritu Bhuiyan" class="logo-avatar">
+                <span class="logo-text">Ritu<span class="text-accent">.</span>Bhuiyan</span>
+            </a>
+            <span class="designation">AI Web Dev &amp; UI/UX<br><small style="color:var(--primary_color); font-size:11px;"><i class="las la-graduation-cap"></i> CSE @ Green Univ</small></span>
+        </div>
+
+        <div class="profile-img-wrap">
+            <img class="me" src="assets/images/ritu-bw.jpg" alt="Ritu Bhuiyan - Portrait Photo">
+            <div class="status-pill">
+                <span class="status-dot"></span>
+                <span>Available for Projects</span>
+            </div>
+        </div>
+
+        <h3 class="email"><a href="mailto:rbbhuyan368@gmail.com">rbbhuyan368@gmail.com</a></h3>
+        <h4 class="address"><i class="las la-map-marker text-accent"></i> Dhaka, Bangladesh 🇧🇩</h4>
+        <p class="copyright">&copy; 2026 Ritu Bhuiyan. All Rights Reserved</p>
+
+        <ul class="social-profile">
+            <li><a href="https://github.com" target="_blank" rel="noopener" aria-label="GitHub"><i class="lab la-github"></i></a></li>
+            <li><a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="lab la-linkedin-in"></i></a></li>
+            <li><a href="https://twitter.com" target="_blank" rel="noopener" aria-label="Twitter"><i class="lab la-twitter"></i></a></li>
+            <li><a href="https://wa.me/8801703506909" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="lab la-whatsapp"></i></a></li>
+        </ul>
+
+        <div class="sidebar-action-btns">
+            <a href="#contact" class="theme-btn">
+                <i class="las la-paper-plane"></i> Hire Me!
+            </a>
+            <a href="https://wa.me/8801703506909?text=Hello%20Ritu%2C%20I%20am%20interested%20in%20discussing%20a%20project!" target="_blank" rel="noopener" class="whatsapp-btn">
+                <i class="lab la-whatsapp"></i> WhatsApp Chat
+            </a>
+        </div>
+    </aside>
+
+    <!-- 11. Main Content Container -->
+    <main class="drake-main">
+        <div class="custom-container">
+
+            <!-- Mobile Inline Profile Card (Displayed on Mobile Screen) -->
+            <aside class="left-sidebar">
+                <div class="sidebar-header">
+                    <a href="#home" class="brand-logo">
+                        <img src="assets/images/ritu-bw.jpg" alt="Ritu Bhuiyan" class="logo-avatar">
+                        <span class="logo-text">Ritu<span class="text-accent">.</span>Bhuiyan</span>
+                    </a>
+                    <span class="designation">AI Web Dev &amp; UI/UX<br><small style="color:var(--primary_color); font-size:11px;"><i class="las la-graduation-cap"></i> CSE @ Green Univ</small></span>
+                </div>
+                <div class="profile-img-wrap">
+                    <img class="me" src="assets/images/ritu-bw.jpg" alt="Ritu Bhuiyan - Portrait Photo">
+                    <div class="status-pill">
+                        <span class="status-dot"></span>
+                        <span>Available for Projects</span>
+                    </div>
+                </div>
+                <h3 class="email"><a href="mailto:rbbhuyan368@gmail.com">rbbhuyan368@gmail.com</a></h3>
+                <h4 class="address"><i class="las la-map-marker text-accent"></i> Dhaka, Bangladesh 🇧🇩</h4>
+                <p class="copyright">&copy; 2026 Ritu Bhuiyan. All Rights Reserved</p>
+                <ul class="social-profile">
+                    <li><a href="https://github.com" target="_blank" rel="noopener" aria-label="GitHub"><i class="lab la-github"></i></a></li>
+                    <li><a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="lab la-linkedin-in"></i></a></li>
+                    <li><a href="https://twitter.com" target="_blank" rel="noopener" aria-label="Twitter"><i class="lab la-twitter"></i></a></li>
+                    <li><a href="https://wa.me/8801703506909" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="lab la-whatsapp"></i></a></li>
+                </ul>
+                <div class="sidebar-action-btns">
+                    <a href="#contact" class="theme-btn">
+                        <i class="las la-paper-plane"></i> Hire Me!
+                    </a>
+                    <a href="https://wa.me/8801703506909?text=Hello%20Ritu%2C%20I%20am%20interested%20in%20discussing%20a%20project!" target="_blank" rel="noopener" class="whatsapp-btn">
+                        <i class="lab la-whatsapp"></i> WhatsApp Chat
+                    </a>
+                </div>
+            </aside>
+
+            <!-- SECTION 1: HERO / INTRODUCE -->
+            <section class="hero-section scroll-to-page" id="home">
+                <div class="content-width">
+                    <div class="hero-content">
+                        <div class="section-header">
+                            <h4 class="subtitle">
+                                <i class="las la-robot"></i> Introducing Ritu Bhuiyan
+                            </h4>
+                            <h1>Say Hi from <span class="text-accent">Ritu Bhuiyan</span>, <br><span class="typing-role">AI-Powered Web Developer</span></h1>
+                        </div>
+
+                        <!-- Instant Visitor Clarity Badges -->
+                        <div class="hero-quick-badges">
+                            <span class="hero-badge-item"><i class="las la-graduation-cap text-accent"></i> CSE Student &bull; Green University of Bangladesh</span>
+                            <span class="hero-badge-item"><i class="las la-microchip text-accent"></i> AI Web Platforms (Antigravity &bull; Claude &bull; Codex)</span>
+                            <span class="hero-badge-item"><i class="las la-terminal text-accent"></i> Advanced Prompt Engineering</span>
+                            <span class="hero-badge-item"><i class="lab la-wordpress text-accent"></i> WordPress &amp; Figma UI/UX</span>
+                        </div>
+
+                        <p class="hero-bio">
+                            I am a passionate AI-Powered Web Developer, Prompt Engineer, and CSE student at <strong>Green University of Bangladesh</strong>. I build intelligent, high-performance websites leveraging next-gen AI platforms including <strong>Google Antigravity, OpenAI Codex, and Claude AI</strong>, paired with master-level <strong>Prompt Engineering</strong>, modern <strong>Figma UI/UX design</strong>, and custom <strong>WordPress</strong> development.
+                        </p>
+
+                        <!-- Direct Call-to-Action Group -->
+                        <div class="hero-cta-group">
+                            <a href="#contact" class="theme-btn">
+                                <i class="las la-briefcase"></i> Start a Project
+                            </a>
+                            <a href="#portfolio" class="theme-btn-outline">
+                                <i class="las la-eye"></i> View My Works
+                            </a>
+                            <a href="https://wa.me/8801703506909" target="_blank" rel="noopener" class="whatsapp-btn">
+                                <i class="lab la-whatsapp"></i> WhatsApp Me
+                            </a>
+                        </div>
+
+                        <!-- Circular Rotating Action Button -->
+                        <a href="#portfolio" class="go-to-project-btn scroll-to" title="Explore Featured Projects">
+                            <img src="assets/images/round-text.png" alt="My Projects Spinning Badge">
+                            <i class="las la-arrow-down"></i>
+                        </a>
+
+                        <!-- Facts & Statistics Counters -->
+                        <div class="facts">
+                            <div class="fact-item">
+                                <h2 class="counter-num" data-target="150" data-suffix="+">150+</h2>
+                                <p>Optimized AI Prompts &amp; <br>Workflows Built</p>
+                            </div>
+                            <div class="fact-item">
+                                <h2 class="counter-num" data-target="30" data-suffix="+">30+</h2>
+                                <p>Web, WordPress &amp; <br>Figma Projects</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 2: ABOUT -->
+            <section class="about-area page-section scroll-to-page" id="about">
+                <div class="content-width">
+                    <div class="about-content">
+                        <div class="section-header">
+                            <h4 class="subtitle">
+                                <i class="lar la-user"></i> About Me
+                            </h4>
+                            <h2>Empowering Modern Web Development Through <span class="text-accent">AI, Design &amp; Code</span></h2>
+                        </div>
+                        <p>
+                            Hello! I am <strong>Ritu Bhuiyan</strong>, a Computer Science &amp; Engineering (CSE) student at <strong>Green University of Bangladesh</strong>. I am driven by bleeding-edge technology and specialize in building modern, high-speed websites powered by artificial intelligence.
+                        </p>
+                        <p>
+                            My primary workflow utilizes state-of-the-art AI development environments such as <strong>Google Antigravity</strong>, <strong>OpenAI Codex</strong>, and <strong>Claude AI</strong>. With strong <strong>Prompt Engineering</strong> expertise, I craft precise, highly contextual prompts to generate production-quality code, automate web logic, and build polished digital products in record time. In addition, I design sleek, user-friendly website prototypes in <strong>Figma</strong> and build tailored, responsive websites with <strong>WordPress</strong>.
+                        </p>
+
+                        <div class="about-features">
+                            <div class="about-feature-card">
+                                <i class="las la-robot"></i>
+                                <h4>AI-Powered Web Dev</h4>
+                                <p>Building next-gen web applications with Google Antigravity, Codex, and Claude AI.</p>
+                            </div>
+                            <div class="about-feature-card">
+                                <i class="las la-terminal"></i>
+                                <h4>Expert Prompt Engineering</h4>
+                                <p>Formulating deep, structured prompts to unlock optimal code quality and AI intelligence.</p>
+                            </div>
+                            <div class="about-feature-card">
+                                <i class="lab la-figma"></i>
+                                <h4>Figma UI/UX &amp; WordPress</h4>
+                                <p>Designing high-fidelity UI prototypes in Figma and launching robust WordPress websites.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 3: RESUME -->
+            <section class="resume-area page-section scroll-to-page" id="resume">
+                <div class="content-width">
+                    <div class="resume-content">
+                        <div class="section-header">
+                            <h4 class="subtitle">
+                                <i class="las la-briefcase"></i> Resume &amp; Background
+                            </h4>
+                            <h2>Education &amp; <span class="text-accent">Experience</span></h2>
+                        </div>
+
+                        <div class="resume-timeline">
+                            <div class="item">
+                                <span class="date">Present</span>
+                                <h3>B.Sc. in Computer Science &amp; Engineering (CSE)</h3>
+                                <h4 class="company">Green University of Bangladesh (GUB) &bull; Dhaka, Bangladesh</h4>
+                                <p>Currently pursuing B.Sc. in Computer Science &amp; Engineering. Focusing on software engineering, web architectures, algorithms, data structures, and artificial intelligence fundamentals.</p>
+                            </div>
+
+                            <div class="item">
+                                <span class="date">2024 - Present</span>
+                                <h3>AI Web Developer &amp; Prompt Engineer</h3>
+                                <h4 class="company">Independent Projects &bull; Remote</h4>
+                                <p>Building intelligent web products using Google Antigravity, OpenAI Codex, and Claude AI. Architecting automated development workflows and writing advanced prompts for rapid, clean code generation.</p>
+                            </div>
+
+                            <div class="item">
+                                <span class="date">2023 - Present</span>
+                                <h3>WordPress Developer &amp; Figma UI/UX Designer</h3>
+                                <h4 class="company">Freelance Web Solutions</h4>
+                                <p>Crafting intuitive website designs, wireframes, and design systems in Figma. Developing custom WordPress websites, responsive business portfolios, and content management systems for clients.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 4: SERVICES -->
+            <section class="services-area page-section scroll-to-page" id="services">
+                <div class="content-width">
+                    <div class="services-content">
+                        <div class="section-header">
+                            <h4 class="subtitle">
+                                <i class="las la-stream"></i> What I Do
+                            </h4>
+                            <h2>My Specialized <span class="text-accent">Services</span></h2>
+                        </div>
+
+                        <div class="services-items">
+                            <div class="service-item">
+                                <h3>AI-Powered Web Development</h3>
+                                <p>Accelerating development with Google Antigravity, OpenAI Codex, and Claude AI. Generating robust, clean code and interactive web systems in record time.</p>
+                                <span class="projects-count">Antigravity &bull; Claude &bull; Codex</span>
+                                <i class="las la-robot service-icon"></i>
+                            </div>
+
+                            <div class="service-item">
+                                <h3>Advanced Prompt Engineering</h3>
+                                <p>Crafting expert-level prompts for generative AI models to build architectures, debug logic, write code, and create automated web workflows.</p>
+                                <span class="projects-count">Structured AI Prompts</span>
+                                <i class="las la-terminal service-icon"></i>
+                            </div>
+
+                            <div class="service-item">
+                                <h3>Figma UI/UX Website Design</h3>
+                                <p>Designing sleek, modern, and user-friendly interface prototypes in Figma with pixel-perfect layouts, responsive grids, and interactive mockups.</p>
+                                <span class="projects-count">Figma Prototypes &amp; Systems</span>
+                                <i class="lab la-figma service-icon"></i>
+                            </div>
+
+                            <div class="service-item">
+                                <h3>WordPress Development &amp; Customization</h3>
+                                <p>Building dynamic, high-converting WordPress websites, custom portfolio sites, business blogs, and landing pages with effortless CMS management.</p>
+                                <span class="projects-count">Custom WordPress CMS</span>
+                                <i class="lab la-wordpress service-icon"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 5: SKILLS -->
+            <section class="skills-area page-section scroll-to-page" id="skills">
+                <div class="content-width">
+                    <div class="skills-content">
+                        <div class="section-header">
+                            <h4 class="subtitle">
+                                <i class="las la-shapes"></i> Technical Arsenal
+                            </h4>
+                            <h2>My Core <span class="text-accent">Skills &amp; Tools</span></h2>
+                        </div>
+
+                        <div class="skills-grid">
+                            <!-- Skill 1: Antigravity -->
+                            <div class="skill-card">
+                                <div class="skill-inner">
+                                    <img src="assets/images/antigravity.svg" alt="Google Antigravity Icon">
+                                    <h2 class="percentage">95%</h2>
+                                </div>
+                                <p class="name">Google Antigravity</p>
+                            </div>
+
+                            <!-- Skill 2: Claude AI -->
+                            <div class="skill-card">
+                                <div class="skill-inner">
+                                    <img src="assets/images/claude.svg" alt="Claude AI Icon">
+                                    <h2 class="percentage">96%</h2>
+                                </div>
+                                <p class="name">Claude AI</p>
+                            </div>
+
+                            <!-- Skill 3: Codex -->
+                            <div class="skill-card">
+                                <div class="skill-inner">
+                                    <img src="assets/images/codex.svg" alt="OpenAI Codex Icon">
+                                    <h2 class="percentage">92%</h2>
+                                </div>
+                                <p class="name">OpenAI Codex</p>
+                            </div>
+
+                            <!-- Skill 4: Prompt Engineering -->
+                            <div class="skill-card">
+                                <div class="skill-inner">
+                                    <img src="assets/images/prompt-eng.svg" alt="Prompt Engineering Icon">
+                                    <h2 class="percentage">98%</h2>
+                                </div>
+                                <p class="name">Prompt Engineering</p>
+                            </div>
+
+                            <!-- Skill 5: Figma UI/UX -->
+                            <div class="skill-card">
+                                <div class="skill-inner">
+                                    <img src="assets/images/figma.png" alt="Figma Icon">
+                                    <h2 class="percentage">94%</h2>
+                                </div>
+                                <p class="name">Figma UI/UX Design</p>
+                            </div>
+
+                            <!-- Skill 6: WordPress -->
+                            <div class="skill-card">
+                                <div class="skill-inner">
+                                    <img src="assets/images/wordpress.png" alt="WordPress Icon">
+                                    <h2 class="percentage">90%</h2>
+                                </div>
+                                <p class="name">WordPress Development</p>
+                            </div>
+
+                            <!-- Skill 7: CSE Computer Science -->
+                            <div class="skill-card">
+                                <div class="skill-inner">
+                                    <img src="assets/images/gub-cse.svg" alt="CSE Green University Icon">
+                                    <h2 class="percentage">88%</h2>
+                                </div>
+                                <p class="name">CSE &bull; Algorithms</p>
+                            </div>
+
+                            <!-- Skill 8: React & Modern Web -->
+                            <div class="skill-card">
+                                <div class="skill-inner">
+                                    <img src="assets/images/react.png" alt="React & Modern Web Icon">
+                                    <h2 class="percentage">86%</h2>
+                                </div>
+                                <p class="name">Modern Web Tech</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 6: PORTFOLIO -->
+            <section class="portfolio-area page-section scroll-to-page" id="portfolio">
+                <div class="content-width">
+                    <div class="portfolio-content">
+                        <div class="section-header">
+                            <h4 class="subtitle">
+                                <i class="las la-grip-vertical"></i> Portfolio Works
+                            </h4>
+                            <h2>Featured <span class="text-accent">Projects</span></h2>
+                        </div>
+
+                        <!-- Filter Tabs -->
+                        <div class="portfolio-filter-nav">
+                            <button class="filter-btn active" data-filter="all">All Works</button>
+                            <button class="filter-btn" data-filter="ai">AI Web &amp; Prompts</button>
+                            <button class="filter-btn" data-filter="figma">Figma UI/UX</button>
+                            <button class="filter-btn" data-filter="wordpress">WordPress</button>
+                        </div>
+
+                        <!-- Projects Grid -->
+                        <div class="portfolio-items-grid">
+                            
+                            <!-- Project 1 -->
+                            <div class="portfolio-item" data-category="figma wordpress">
+                                <div class="portfolio-item-inner open-lightbox" data-project="bureau">
+                                    <img src="assets/images/portfolio1.jpg" alt="Bureau Studio Architecture Website">
+                                    <div class="portfolio-overlay">
+                                        <div class="portfolio-categories">
+                                            <span>Figma</span>
+                                            <span>WordPress</span>
+                                        </div>
+                                        <div class="portfolio-view-icon">
+                                            <i class="las la-expand"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h3 class="project-title">
+                                    <a href="#" class="open-lightbox" data-project="bureau">Bureau - Architecture Studio Website (Figma &amp; WordPress)</a>
+                                </h3>
+                            </div>
+
+                            <!-- Project 2 -->
+                            <div class="portfolio-item" data-category="ai figma">
+                                <div class="portfolio-item-inner open-lightbox" data-project="moonex">
+                                    <img src="assets/images/portfolio2.jpg" alt="Moonex Crypto &amp; AI Platform">
+                                    <div class="portfolio-overlay">
+                                        <div class="portfolio-categories">
+                                            <span>Claude AI</span>
+                                            <span>Figma UI/UX</span>
+                                        </div>
+                                        <div class="portfolio-view-icon">
+                                            <i class="las la-expand"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h3 class="project-title">
+                                    <a href="#" class="open-lightbox" data-project="moonex">Moonex - Next-Gen Crypto &amp; AI Analytics Platform</a>
+                                </h3>
+                            </div>
+
+                            <!-- Project 3 -->
+                            <div class="portfolio-item" data-category="ai">
+                                <div class="portfolio-item-inner open-lightbox" data-project="taskly">
+                                    <img src="assets/images/portfolio3.jpg" alt="Taskly AI SaaS App">
+                                    <div class="portfolio-overlay">
+                                        <div class="portfolio-categories">
+                                            <span>Antigravity</span>
+                                            <span>OpenAI Codex</span>
+                                        </div>
+                                        <div class="portfolio-view-icon">
+                                            <i class="las la-expand"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h3 class="project-title">
+                                    <a href="#" class="open-lightbox" data-project="taskly">Taskly - AI Workflow App Built with Antigravity &amp; Codex</a>
+                                </h3>
+                            </div>
+
+                            <!-- Project 4 -->
+                            <div class="portfolio-item" data-category="ai figma">
+                                <div class="portfolio-item-inner open-lightbox" data-project="humaan">
+                                    <img src="assets/images/portfolio4.jpg" alt="PromptStudio Showcase Platform">
+                                    <div class="portfolio-overlay">
+                                        <div class="portfolio-categories">
+                                            <span>Prompt Eng</span>
+                                            <span>AI Web</span>
+                                        </div>
+                                        <div class="portfolio-view-icon">
+                                            <i class="las la-expand"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h3 class="project-title">
+                                    <a href="#" class="open-lightbox" data-project="humaan">PromptStudio - AI Prompt Engineering Showcase Platform</a>
+                                </h3>
+                            </div>
+
+                            <!-- Project 5 -->
+                            <div class="portfolio-item" data-category="wordpress figma">
+                                <div class="portfolio-item-inner open-lightbox" data-project="lewis">
+                                    <img src="assets/images/portfolio5.jpg" alt="Lewis E-Commerce Apparel">
+                                    <div class="portfolio-overlay">
+                                        <div class="portfolio-categories">
+                                            <span>WordPress</span>
+                                            <span>Figma</span>
+                                        </div>
+                                        <div class="portfolio-view-icon">
+                                            <i class="las la-expand"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h3 class="project-title">
+                                    <a href="#" class="open-lightbox" data-project="lewis">Lewis - Custom WordPress Storefront &amp; Figma Prototype</a>
+                                </h3>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 7: TESTIMONIALS -->
+            <section class="testimonial-area page-section scroll-to-page" id="testimonial">
+                <div class="content-width">
+                    <div class="testimonial-content">
+                        <div class="section-header">
+                            <h4 class="subtitle">
+                                <i class="lar la-comment"></i> Client Reviews
+                            </h4>
+                            <h2>Real Feedback from <span class="text-accent">Real Clients &amp; Businesses</span></h2>
+                        </div>
+
+                        <div class="testimonial-carousel-wrap">
+                            <!-- Slide 1: Local Cafe Owner -->
+                            <div class="testimonial-card active">
+                                <div class="testimonial-rating">
+                                    <i class="las la-star"></i>
+                                    <i class="las la-star"></i>
+                                    <i class="las la-star"></i>
+                                    <i class="las la-star"></i>
+                                    <i class="las la-star"></i>
+                                </div>
+                                <p class="quote-text">
+                                    &ldquo;I needed a clean, budget-friendly website for my neighborhood cafe in Dhaka. Even with my small budget, Ritu worked with genuine care and sincerity. Now our customers easily check our daily specials and order directly on WhatsApp!&rdquo;
+                                </p>
+                                <div class="testimonial-author-row">
+                                    <img src="assets/images/client-tanvir.jpg" alt="Tanvir Ahmed">
+                                    <div>
+                                        <h4>Tanvir Ahmed</h4>
+                                        <p>Owner at <span>Dhakaiya Coffee Corner</span></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Slide 2: Online Boutique Owner -->
+                            <div class="testimonial-card">
+                                <div class="testimonial-rating">
+                                    <i class="las la-star"></i>
+                                    <i class="las la-star"></i>
+                                    <i class="las la-star"></i>
+                                    <i class="las la-star"></i>
+                                    <i class="las la-star"></i>
+                                </div>
+                                <p class="quote-text">
+                                    &ldquo;I was running a small clothing business from home on Facebook and getting overwhelmed taking orders manually. Ritu built me an affordable, beautiful WordPress store that made order management so easy. Truly an honest, patient developer!&rdquo;
+                                </p>
+                                <div class="testimonial-author-row">
+                                    <img src="assets/images/client-nusrat.jpg" alt="Nusrat Jahan">
+                                    <div>
+                                        <h4>Nusrat Jahan</h4>
+                                        <p>Founder at <span>Elegance Boutique BD</span></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Slide 3: University Student from Another University -->
+                            <div class="testimonial-card">
+                                <div class="testimonial-rating">
+                                    <i class="las la-star"></i>
+                                    <i class="las la-star"></i>
+                                    <i class="las la-star"></i>
+                                    <i class="las la-star"></i>
+                                    <i class="las la-star"></i>
+                                </div>
+                                <p class="quote-text">
+                                    &ldquo;I reached out to Ritu to help design our team&rsquo;s semester project website. Even though we study at different universities, he collaborated with us so smoothly, built our frontend from Figma designs, and helped integrate AI tools. Truly skilled and supportive!&rdquo;
+                                </p>
+                                <div class="testimonial-author-row">
+                                    <img src="assets/images/client-sumaiya.jpg" alt="Sumaiya Akter">
+                                    <div>
+                                        <h4>Sumaiya Akter</h4>
+                                        <p>CSE Student at <span>BRAC University</span></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Slide 4: Local Repair Shop Owner -->
+                            <div class="testimonial-card">
+                                <div class="testimonial-rating">
+                                    <i class="las la-star"></i>
+                                    <i class="las la-star"></i>
+                                    <i class="las la-star"></i>
+                                    <i class="las la-star"></i>
+                                    <i class="las la-star"></i>
+                                </div>
+                                <p class="quote-text">
+                                    &ldquo;For my gadget repair shop in Farmgate, I just wanted a simple one-page website so local customers could find our address and call us directly. Ritu delivered everything in just 2 days at a very fair and affordable price. Highly dependable!&rdquo;
+                                </p>
+                                <div class="testimonial-author-row">
+                                    <img src="assets/images/client-arifur.jpg" alt="Arifur Rahman">
+                                    <div>
+                                        <h4>Arifur Rahman</h4>
+                                        <p>Shop Owner at <span>Rahman Tech &amp; Repair</span></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Navigation Controls -->
+                            <div class="testimonial-footer-nav">
+                                <div class="testimonial-counter">
+                                    <span class="current" id="currentSlideNum">01</span> / 04
+                                </div>
+                                <div class="testimonial-nav-btns">
+                                    <button id="prevTestimonial" aria-label="Previous Testimonial"><i class="las la-arrow-left"></i></button>
+                                    <button id="nextTestimonial" aria-label="Next Testimonial"><i class="las la-arrow-right"></i></button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Client Brand Logos -->
+                        <div class="clients-logos">
+                            <h4>Trusted by Local Businesses &amp; Growing Brands</h4>
+                            <div class="clients-grid">
+                                <div class="client-logo-item"><img src="assets/images/client-1.png" alt="Client 1"></div>
+                                <div class="client-logo-item"><img src="assets/images/client-2.png" alt="Client 2"></div>
+                                <div class="client-logo-item"><img src="assets/images/client-3.png" alt="Client 3"></div>
+                                <div class="client-logo-item"><img src="assets/images/client-4.png" alt="Client 4"></div>
+                                <div class="client-logo-item"><img src="assets/images/client-5.png" alt="Client 5"></div>
+                                <div class="client-logo-item"><img src="assets/images/client-6.png" alt="Client 6"></div>
+                                <div class="client-logo-item"><img src="assets/images/client-7.png" alt="Client 7"></div>
+                                <div class="client-logo-item"><img src="assets/images/client-8.png" alt="Client 8"></div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 8: PRICING -->
+            <section class="pricing-area page-section scroll-to-page" id="pricing">
+                <div class="content-width">
+                    <div class="pricing-content">
+                        <div class="section-header">
+                            <h4 class="subtitle">
+                                <i class="las la-dollar-sign"></i> Transparent Pricing
+                            </h4>
+                            <h2>Flexible <span class="text-accent">Pricing Plans</span></h2>
+                        </div>
+
+                        <div class="pricing-grid">
+                            <!-- Standard Plan -->
+                            <div class="pricing-table">
+                                <div class="pricing-table-header">
+                                    <h4>AI &amp; WordPress Starter</h4>
+                                    <p class="plan-desc">Ideal for landing pages, portfolio sites, and modern startups</p>
+                                    <h2 class="price">$1,200 <span>/ project</span></h2>
+                                </div>
+                                <ul class="pricing-features-list">
+                                    <li><i class="las la-check"></i> Responsive Figma UI/UX Design &amp; Prototype</li>
+                                    <li><i class="las la-check"></i> Custom WordPress or AI-Assisted Web Build</li>
+                                    <li><i class="las la-check"></i> Expert Prompt Engineering Setup</li>
+                                    <li><i class="las la-check"></i> Mobile Glassmorphism &amp; Speed Optimization</li>
+                                    <li><i class="las la-check"></i> 14 Days Post-Launch Support</li>
+                                </ul>
+                                <a href="#contact" class="theme-btn-outline">Choose Standard</a>
+                            </div>
+
+                            <!-- Premium Plan (Featured) -->
+                            <div class="pricing-table featured">
+                                <span class="badge-popular">Most Popular</span>
+                                <div class="pricing-table-header">
+                                    <h4>Full AI Web &amp; Custom System</h4>
+                                    <p class="plan-desc">For comprehensive web apps, SaaS platforms &amp; intelligent solutions</p>
+                                    <h2 class="price">$2,400 <span>/ project</span></h2>
+                                </div>
+                                <ul class="pricing-features-list">
+                                    <li><i class="las la-check"></i> Custom Architecture (Antigravity, Claude &amp; Codex)</li>
+                                    <li><i class="las la-check"></i> Bespoke Figma Design System &amp; Clickable Prototypes</li>
+                                    <li><i class="las la-check"></i> Advanced Prompt Engineering &amp; Automation</li>
+                                    <li><i class="las la-check"></i> Dynamic WordPress or Modern Web Framework</li>
+                                    <li><i class="las la-check"></i> 3D Particle &amp; Motion Micro-Animations</li>
+                                    <li><i class="las la-check"></i> 30 Days Priority Support &amp; Revisions</li>
+                                </ul>
+                                <a href="#contact" class="theme-btn">Get Started Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 9: CONTACT -->
+            <section class="contact-area page-section scroll-to-page" id="contact">
+                <div class="content-width">
+                    <div class="contact-content">
+                        <div class="section-header">
+                            <h4 class="subtitle">
+                                <i class="las la-envelope"></i> Let's Connect
+                            </h4>
+                            <h2>Let's Build Something <span class="text-accent">Great Together!</span></h2>
+                        </div>
+
+                        <!-- Contact Quick Cards -->
+                        <div class="contact-info-strip">
+                            <div class="contact-info-card">
+                                <i class="lab la-whatsapp text-accent" style="font-size: 28px;"></i>
+                                <div>
+                                    <h5>WhatsApp / Phone</h5>
+                                    <p><a href="https://wa.me/8801703506909" target="_blank" rel="noopener" style="color: #fff; font-weight: 500;">+880 1703-506909</a></p>
+                                </div>
+                            </div>
+                            <div class="contact-info-card">
+                                <i class="las la-envelope-open-text"></i>
+                                <div>
+                                    <h5>Email</h5>
+                                    <p><a href="mailto:rbbhuyan368@gmail.com" style="color: #fff;">rbbhuyan368@gmail.com</a></p>
+                                </div>
+                            </div>
+                            <div class="contact-info-card">
+                                <i class="las la-graduation-cap"></i>
+                                <div>
+                                    <h5>University</h5>
+                                    <p style="color: #fff;">Green University of Bangladesh</p>
+                                </div>
+                            </div>
+                            <div class="contact-info-card">
+                                <i class="las la-map-marker-alt"></i>
+                                <div>
+                                    <h5>Location</h5>
+                                    <p>Dhaka, Bangladesh 🇧🇩</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Contact Form -->
+                        <form class="contact-form" id="contactForm">
+                            <div class="row">
+                                <div class="col-md-6 form-group-item">
+                                    <label for="fullName">Your Name <sup>*</sup></label>
+                                    <input type="text" id="fullName" class="form-input-control" placeholder="What's your name?" required>
+                                </div>
+
+                                <div class="col-md-6 form-group-item">
+                                    <label for="email">Email Address <sup>*</sup></label>
+                                    <input type="email" id="email" class="form-input-control" placeholder="yourname@company.com" required>
+                                </div>
+
+                                <div class="col-md-6 form-group-item">
+                                    <label for="phone">Phone / WhatsApp <span>(Optional)</span></label>
+                                    <input type="tel" id="phone" class="form-input-control" placeholder="Your phone or WhatsApp number">
+                                </div>
+
+                                <div class="col-md-6 form-group-item">
+                                    <label for="subject">Project Type <sup>*</sup></label>
+                                    <select id="subject" class="form-input-control" required>
+                                        <option value="AI Web Application (Antigravity/Claude/Codex)">AI Web Application (Antigravity / Claude / Codex)</option>
+                                        <option value="Prompt Engineering & Automation">Prompt Engineering &amp; AI Automation</option>
+                                        <option value="Figma UI/UX Website Design">Figma UI/UX Website Design</option>
+                                        <option value="WordPress Custom Development">WordPress Custom Development</option>
+                                        <option value="General Consultation">General Consultation / Collaboration</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-12 form-group-item">
+                                    <label for="budget">Estimated Budget</label>
+                                    <select id="budget" class="form-input-control">
+                                        <option value="$1,000 - $2,500">$1,000 - $2,500</option>
+                                        <option value="$2,500 - $5,000" selected>$2,500 - $5,000</option>
+                                        <option value="$5,000 - $10,000">$5,000 - $10,000</option>
+                                        <option value="$10,000+">$10,000+</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-12 form-group-item">
+                                    <label for="message">Tell Me About Your Project <sup>*</sup></label>
+                                    <textarea id="message" class="form-input-control" rows="4" placeholder="Briefly describe your project goals, required features, and timeline..." required></textarea>
+                                </div>
+
+                                <div class="col-12 form-group-item">
+                                    <label class="file-upload-box">
+                                        <i class="las la-cloud-upload-alt" style="font-size: 22px;"></i>
+                                        <span>Add an attachment (PDF, PNG, JPG, Docx - optional)</span>
+                                        <input type="file" id="attachment" accept=".pdf,.doc,.docx,.png,.jpg,.jpeg">
+                                    </label>
+                                    <span class="selected-filename"></span>
+                                </div>
+
+                                <div class="col-12" style="margin-top: 15px;">
+                                    <button type="submit" id="submitBtn" class="theme-btn">
+                                        <i class="las la-paper-plane"></i> Send Message
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- 12. Portfolio Lightbox Dialog Modal -->
+    <div class="lightbox-modal" role="dialog" aria-modal="true" aria-labelledby="lightboxTitle">
+        <div class="lightbox-content">
+            <button class="lightbox-close" aria-label="Close modal">
+                <i class="las la-times"></i>
+            </button>
+            <div class="lightbox-img-wrap">
+                <img id="lightboxImg" src="assets/images/portfolio1.jpg" alt="Project Preview">
+            </div>
+            <div class="lightbox-info">
+                <span class="category-tag" id="lightboxCategory">Webflow Design</span>
+                <h3 id="lightboxTitle">Bureau Architecture Studio</h3>
+                <p id="lightboxDesc">Detailed narrative and architecture overview.</p>
+                <div class="lightbox-actions">
+                    <a href="#contact" class="theme-btn" style="padding: 10px 30px; font-size: 13px;">Inquire for Project</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 13. Feedback Toast Alert -->
+    <div class="toast-alert" id="toastAlert" role="alert">
+        <i class="las la-check-circle"></i>
+        <div id="toastMsg">Thank you! Your message has been sent successfully.</div>
+    </div>
+
+    <!-- 14. Floating Back to Top Button -->
+    <button class="back-to-top" aria-label="Scroll back to top">
+        <i class="las la-arrow-up"></i>
+    </button>
+
+    <!-- Bulletproof Inline Mobile Navigation Drawer Controller -->
+    <script>
+        (function() {
+            var lastActionTime = 0;
+            window.openNavDrawer = function(e) {
+                if (e) {
+                    try { e.preventDefault(); e.stopPropagation(); } catch(err){}
+                }
+                lastActionTime = Date.now();
+                var menu = document.getElementById('responsiveSidebarMenu') || document.querySelector('.responsive-sidebar-menu');
+                if (menu) {
+                    menu.classList.add('active');
+                    document.body.classList.add('menu-open');
+                }
+            };
+            window.closeNavDrawer = function(e) {
+                if (Date.now() - lastActionTime < 350) {
+                    if (e) {
+                        try { e.preventDefault(); e.stopPropagation(); } catch(err){}
+                    }
+                    return;
+                }
+                var menu = document.getElementById('responsiveSidebarMenu') || document.querySelector('.responsive-sidebar-menu');
+                if (menu) {
+                    menu.classList.remove('active');
+                    document.body.classList.remove('menu-open');
+                }
+            };
+            window.toggleNavDrawer = function(e) {
+                if (e) {
+                    try { e.preventDefault(); e.stopPropagation(); } catch(err){}
+                }
+                var menu = document.getElementById('responsiveSidebarMenu') || document.querySelector('.responsive-sidebar-menu');
+                if (menu && menu.classList.contains('active')) {
+                    window.closeNavDrawer(e);
+                } else {
+                    window.openNavDrawer(e);
+                }
+            };
+
+            // Dynamic Active Page Tracker in Mobile Navigation Bar
+            var sectionTitles = {
+                'home': 'Home',
+                'about': 'About',
+                'resume': 'Resume',
+                'services': 'Services',
+                'skills': 'Skills',
+                'portfolio': 'Portfolio',
+                'testimonial': 'Testimonials',
+                'pricing': 'Pricing',
+                'contact': 'Contact'
+            };
+
+            window.updateActivePageName = function(name) {
+                var el = document.getElementById('activePageName');
+                if (el && name && el.textContent !== name) {
+                    el.textContent = name;
+                }
+            };
+
+            function trackActiveSection() {
+                var el = document.getElementById('activePageName');
+                if (!el) return;
+                var scrollPos = window.pageYOffset + 200;
+                var currentId = 'home';
+
+                if ((window.innerHeight + window.pageYOffset) >= document.body.offsetHeight - 60) {
+                    currentId = 'contact';
+                } else if (window.pageYOffset < 150) {
+                    currentId = 'home';
+                } else {
+                    var secs = document.querySelectorAll('.scroll-to-page');
+                    for (var i = 0; i < secs.length; i++) {
+                        var sec = secs[i];
+                        if (scrollPos >= sec.offsetTop && scrollPos < sec.offsetTop + sec.offsetHeight) {
+                            currentId = sec.id;
+                            break;
+                        }
+                    }
+                }
+
+                if (sectionTitles[currentId] && el.textContent !== sectionTitles[currentId]) {
+                    el.textContent = sectionTitles[currentId];
+                }
+            }
+
+            window.addEventListener('scroll', trackActiveSection, { passive: true });
+            window.addEventListener('DOMContentLoaded', trackActiveSection);
+            setTimeout(trackActiveSection, 300);
+        })();
+    </script>
+    <script src="assets/js/main.js?v=5.5"></script>
+</body>
+</html>
